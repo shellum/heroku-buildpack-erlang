@@ -7,6 +7,9 @@ if [ -f $1/rebar.config ]; then
 elif [ -d $1/ebin ]; then
   echo "Erlang"
   exit 0
+elif [ -f $1/Makefile ]; then
+  echo "Erlang"
+  exit 0
 else
   exit 1
 fi
