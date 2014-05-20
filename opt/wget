@@ -1,0 +1,6 @@
+#! /bin/bash
+# wget wrapper for curl
+shift
+shift
+echo "$@"
+exec curl -Lo "$@"
