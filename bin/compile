@@ -17,6 +17,10 @@ fi
 ver=${OTP_VERSION:=${DEFAULT_OTP_VERSION}}
 tarball=${ver}.tgz
 OTP_TARBALL_URL="https://s3.amazonaws.com/heroku-buildpack-erlang/${tarball}"
+if [ "$ver" == "17" ]; then
+  OTP_TARBALL_URL="https://s3.amazonaws.com/oc-buildpacks/oc-buildpack-erlang/17.tgz"
+fi
+echo "-----> Pulling Erlang/OTP from $OTP_TARBALL_URL"
 ERLROOT=${build}/otp
 PROFILE=${HOME}/.profile.d
 
